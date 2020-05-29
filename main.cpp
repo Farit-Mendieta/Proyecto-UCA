@@ -76,7 +76,7 @@ int menu(int m)
 }
 
 //Menu 2 de nuestra tienda TecnoStar
-void menu2()//menu de clientes 
+void menu2()
 {
     int k;
     cout<<"------------------TecnoStar-------------------"<<endl;
@@ -100,8 +100,8 @@ void menu2()//menu de clientes
     }
 }
 
-void lectura(){ //funcion de lectura de archivo txt
-    	fstream archivo("tienda.txt");
+void lectura(){ //esta es la funcion para abrir la hoja de texto donde estan guardado los datos del cliente
+    	fstream archivo("tienda.txt"); //sirve como para llamar al archivo
     	string linea;
     	int op;
 
@@ -126,14 +126,14 @@ void lectura(){ //funcion de lectura de archivo txt
 void clientes()
 {
     int i,j;
-    texto cliente1; //"texto" es la estructura que esta en un header
+    texto cliente1; //"texto" es la estructura
     ofstream datos;
     datos.open("tienda.txt");//creacion del txt
 
     cout<<"Cliente-TecnoStar"<<endl;
-    cout<<"Cedula de identidad: ";//piediendo datos
-    gets(cliente1.Cedula);//ingreso del dato
-    fflush(stdin);//limpiando el buffer 
+    cout<<"Cedula de identidad: ";
+    gets(cliente1.Cedula);
+    fflush(stdin);
 
     cout<<"Nombre: ";
     gets(cliente1.Nombre);
@@ -151,7 +151,7 @@ void clientes()
     gets(cliente1.Correo);
     fflush(stdin);
 
-    datos<<cliente1.Cedula<<endl; //escribiendo en el archivo datos
+    datos<<cliente1.Cedula<<endl;
     datos<<cliente1.Nombre<<endl;
     datos<<cliente1.Telefono<<endl;
     datos<<cliente1.Direccion<<endl;
